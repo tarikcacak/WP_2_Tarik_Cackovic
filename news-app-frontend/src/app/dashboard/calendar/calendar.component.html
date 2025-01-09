@@ -1,0 +1,21 @@
+<div class="calendar">
+  <h2>All News by Date</h2>
+  <div class="filter-controls">
+    <label for="date-filter">Select Date:</label>
+    <input id="date-filter" type="date" (change)="onDateChange($event)" />
+  </div>
+  <div *ngIf="filteredNews.length; else noNews" class="news-grid">
+    <div *ngFor="let item of filteredNews" class="news-item">
+      <img [src]="item.image" alt="{{ item.title }}" />
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.short_description }}</p>
+    </div>
+  </div>
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <button (click)="nextPage()" [disabled]="currentPage * pageSize >= allNews.length">Next</button>
+  </div>
+  <ng-template #noNews>
+    <p class="no-news">No news for this date</p>
+  </ng-template>
+</div>

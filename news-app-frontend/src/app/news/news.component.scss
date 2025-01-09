@@ -1,0 +1,132 @@
+@use 'news-app-standards.scss' as styles;
+
+.navbar {
+  margin: 16px;
+  background: linear-gradient(135deg, styles.$primary-color, styles.$secondary-color);
+  padding: 1rem;
+  border-radius: 16px;
+
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5rem 1rem;
+      color: #ffffff;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      &.active {
+        border-color: #ff9800;
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+.news-section {
+  h2 {
+    text-align: center;
+    color: styles.$primary-color;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .news-grid {
+    margin: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .news-item {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    .news-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .news-content {
+      padding: 1rem;
+
+      h4 {
+        color: styles.$primary-color;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+      }
+
+      p {
+        color: #333333;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: styles.$secondary-color;
+    font-style: italic;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    button {
+      margin: 1rem auto;
+      display: block;
+      padding: 0.8rem 1.5rem;
+      background-color: #ff9800;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: #e68a00;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,72 @@
+@use 'news-app-standards.scss' as styles;
+
+.register-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, styles.$primary-color, styles.$secondary-color); // Orange and purple gradient
+  color: #ffffff;
+}
+
+.register-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #673ab7; // Purple
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #ff9800; // Orange underline
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+
+  form {
+    div {
+      margin-bottom: 1rem;
+
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #ff9800; // Orange
+      }
+
+      input {
+        width: 250px;
+        padding: 0.8rem;
+        border: 2px solid #673ab7; // Purple
+        border-radius: 5px;
+        outline: none;
+
+        &:focus {
+          border-color: #ff9800; // Orange
+          box-shadow: 0 0 4px #ff9800;
+        }
+      }
+    }
+
+    button {
+      background: #ff9800; // Orange
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #e68a00; // Slightly darker orange
+      }
+    }
+  }
+}

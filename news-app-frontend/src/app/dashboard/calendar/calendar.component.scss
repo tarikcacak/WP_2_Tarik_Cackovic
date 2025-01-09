@@ -1,0 +1,128 @@
+@use 'news-app-standards' as styles;
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, styles.$primary-color, styles.$secondary-color); // App gradient
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 900px; // Increased width
+  margin: 0 auto 16px auto;
+
+  h2 {
+    font-size: 2.5rem; // Larger title
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #ff9800; // Highlight color
+    padding-bottom: 0.7rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .filter-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    label {
+      font-size: 1.2rem;
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    input[type='date'] {
+      width: 100%;
+      max-width: 400px;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: 2px solid styles.$primary-color;
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #ff9800;
+        box-shadow: 0 0 6px #ff9800;
+      }
+    }
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+
+    .news-item {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      color: styles.$primary-color;
+
+      img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.5rem;
+        color: styles.$secondary-color;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #555555;
+        line-height: 1.4;
+      }
+    }
+  }
+
+  .pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      background: styles.$primary-color;
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        background: styles.$secondary-color;
+      }
+    }
+  }
+
+  .no-news {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 2rem;
+  }
+}

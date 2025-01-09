@@ -1,0 +1,32 @@
+<div class="admin-panel">
+  <h2>Admin Panel</h2>
+  <div *ngIf="users.length; else noUsers">
+    <table class="users-table">
+      <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Admin Status</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.is_admin ? 'Yes' : 'No' }}</td>
+        <td>
+          <button (click)="toggleAdmin(user)">
+            {{ user.is_admin ? 'Revoke Admin' : 'Make Admin' }}
+          </button>
+          <button class="edit-button" (click)="editUser(user)">Edit</button>
+          <button class="delete-button" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noUsers>
+    <p>No users found.</p>
+  </ng-template>
+</div>

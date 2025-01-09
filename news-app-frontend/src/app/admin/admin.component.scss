@@ -1,0 +1,70 @@
+.admin-panel {
+  padding: 2rem;
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+
+    th, td {
+      padding: 1rem;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background: #4caf50;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .edit-button {
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background: #e68a00;
+      }
+    }
+
+    .delete-button {
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background: #d32f2f;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: #ffffff;
+    font-style: italic;
+  }
+}
